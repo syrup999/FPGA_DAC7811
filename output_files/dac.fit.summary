@@ -1,0 +1,16 @@
+Fitter Status : Successful - Tue Jan 23 20:08:47 2024
+Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Full Version
+Revision Name : dac
+Top-level Entity Name : dac
+Family : Cyclone IV E
+Device : EP4CE22F17C6
+Timing Models : Final
+Total logic elements : 1,321 / 22,320 ( 6 % )
+    Total combinational functions : 690 / 22,320 ( 3 % )
+    Dedicated logic registers : 1,124 / 22,320 ( 5 % )
+Total registers : 1124
+Total pins : 4 / 154 ( 3 % )
+Total virtual pins : 0
+Total memory bits : 72,344 / 608,256 ( 12 % )
+Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )
+Total PLLs : 1 / 4 ( 25 % )

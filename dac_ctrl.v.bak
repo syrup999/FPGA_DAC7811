@@ -1,0 +1,57 @@
+module dac_ctrl (
+    output reg SYNC_N,
+    output reg SCLK,
+    output reg SDIN,
+    input reg CLK
+);
+reg [4:0] CYCLE;
+initial 
+begin
+    SYNC_N <= 1'b1;
+    SCLK <= 1'b0;
+    SDIN <= 1'b1;
+    CYCLE <= 5'b1_1111;
+end
+always @(posedge CLK) 
+begin
+    CYCLE <= CYCLE + 1'b1 ; 
+end
+always @(posedge CLK) 
+begin
+    casex (CYCLE)
+        'd0: SYNC_N <= 1'b1;
+        'd1: SYNC_N <= 1'b0;
+        'd2: SYNC_N <= 1'b0;
+
+        'd3:begin 
+                SCLK <= 1'b1;
+                SDIN <= 1'b0;
+            end 
+        'd4: SDIN <= 1'b0;
+        'd5: SDIN <= 1'b0;
+        'd6: SDIN <= 1'b1;
+
+        'd7: SDIN <= 1'b1;
+        'd8: SDIN <= 1'b1;
+        'd9: SDIN <= 1'b1;
+        'd10:SDIN <= 1'b1;
+
+        'd11:SDIN <= 1'b1;
+        'd12:SDIN <= 1'b1;
+        'd13:SDIN <= 1'b1;
+        'd14:SDIN <= 1'b1;
+
+        'd15:SDIN <= 1'b1;
+        'd16:SDIN <= 1'b1;
+        'd17:SDIN <= 1'b1;
+        'd18:SDIN <= 1'b1;
+
+        'd19:begin
+                SCLK <= 1'b0;
+                SDIN <= 1'b1;
+               
+            end
+        default: 
+    endcase    
+end
+endmodule
